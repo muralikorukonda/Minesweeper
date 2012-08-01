@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{7a864e45-eaf4-4f63-a885-e3a5531e318e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm</Extensions>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{7e9e1459-1c4b-48b7-b18d-33d9e4175143}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;jpg;jpeg;jpe;png;manifest</Extensions>
+    </Filter>
+    <Filter Include="source\view">
+      <UniqueIdentifier>{516a6fda-ffab-4fdc-aede-aecccb3eecd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\model">
+      <UniqueIdentifier>{f9298bc5-d7cb-4e4d-92e8-2e034729af10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\util">
+      <UniqueIdentifier>{41dccc2d-3e37-46a4-8b68-539c6fb64114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\controllor">
+      <UniqueIdentifier>{3b935b00-ef4e-4095-bdd4-0b908f2195a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\main">
+      <UniqueIdentifier>{59980004-eb54-4da7-aa37-b157e715e373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\view\layer">
+      <UniqueIdentifier>{73cba43d-73b7-4b08-a579-99cde4aebd82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\model\class">
+      <UniqueIdentifier>{ee1cf1b8-f5e7-4664-97ac-71c512adfcff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\freecell.ico">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\CloseSelected.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\CloseNormal.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\HelloWorld.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\fps_images.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\fps_images-hd.png">
+      <Filter>resource</Filter>
+    </None>
+    <None Include="..\Resources\fps_images-ipadhd.png">
+      <Filter>resource</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="freecell.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>source\main</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>source\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>source\main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Controller.h">
+      <Filter>source\controllor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DataManager.h">
+      <Filter>source\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Util.h">
+      <Filter>source\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\DisplayManager.h">
+      <Filter>source\view</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\WelcomeLayer.h">
+      <Filter>source\view\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AboutLayer.h">
+      <Filter>source\view\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MainLayer.h">
+      <Filter>source\view\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\OptionLayer.h">
+      <Filter>source\view\layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\BLock.h">
+      <Filter>source\model\class</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>source\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>source\main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Controller.cpp">
+      <Filter>source\controllor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DataManager.cpp">
+      <Filter>source\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Util.cpp">
+      <Filter>source\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\DisplayManager.cpp">
+      <Filter>source\view</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AboutLayer.cpp">
+      <Filter>source\view\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MainLayer.cpp">
+      <Filter>source\view\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\OptionLayer.cpp">
+      <Filter>source\view\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\WelcomeLayer.cpp">
+      <Filter>source\view\layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\BLock.cpp">
+      <Filter>source\model\class</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
