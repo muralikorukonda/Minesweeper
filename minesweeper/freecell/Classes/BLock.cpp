@@ -1,73 +1,63 @@
 #include "BLock.h"
 #include "Controller.h"
+#include "DataManager.h"
 
 
-BLock::BLock(void)
+Block::Block(void)
 {
 	this->isTurned = false;
 	this->number = -1;
 }
 
 
-BLock::~BLock(void)
+Block::~Block(void)
 {
 }
 
-CCRect BLock::rect()
+CCRect Block::rect()
 {
     CCSize s = getTexture()->getContentSize();
     return CCRectMake(-s.width / 2, -s.height / 2, s.width, s.height);
 }
 
-
-bool BLock::initWithTexture(CCTexture2D* aTexture, int type)
-{
-    if( CCSprite::initWithTexture(aTexture) ) 
-    {
-       
-    }
-    
-    return true;
-}
-
-void BLock::onEnter()
+void Block::onEnter()
 {
     CCDirector* pDirector = CCDirector::sharedDirector();
     pDirector->getTouchDispatcher()->addTargetedDelegate(this, 0, true);
     CCSprite::onEnter();
 }
 
-void BLock::onExit()
+void Block::onExit()
 {
     CCDirector* pDirector = CCDirector::sharedDirector();
     pDirector->getTouchDispatcher()->removeDelegate(this);
     CCSprite::onExit();
 }    
 
-bool BLock::containsTouchLocation(CCTouch* touch)
+bool Block::containsTouchLocation(CCTouch* touch)
 {
     return CCRect::CCRectContainsPoint(rect(), convertTouchToNodeSpaceAR(touch));
 }
 
-bool BLock::ccTouchBegan(CCTouch* touch, CCEvent* event)
+bool Block::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
     if ( !containsTouchLocation(touch) ) 
 		return false;	
     return true;
 }
 
-void BLock::ccTouchMoved(CCTouch* touch, CCEvent* event)
+void Block::ccTouchMoved(CCTouch* touch, CCEvent* event)
 {
  
 }
 
-CCObject* BLock::copyWithZone(CCZone *pZone)
+CCObject* Block::copyWithZone(CCZone *pZone)
 {
     this->retain();
     return this;
 }
 
-void BLock::ccTouchEnded(CCTouch* touch, CCEvent* event)
+void Block::ccTouchEnded(CCTouch* touch, CCEvent* event)
 {
 	CCLOG("Touch block %d", index);	   
 	if (!this->isTurned) {
@@ -76,15 +66,7 @@ void BLock::ccTouchEnded(CCTouch* touch, CCEvent* event)
 	} 
 } 
 
-BLock* BLock::blockWithTexture(CCTexture2D* aTexture)
-{
-    BLock* block = new BLock();
-    block->initWithTexture( aTexture , 0);
-    block->autorelease();
-    return block;
-}
-
-void BLock::turn() {
+void Block::turn() {
 	if ( this->number == -1) {
 		// change image
 		CCTexture2D *texture = CCTextureCache::sharedTextureCache()->addImage("ll.png");
@@ -97,4 +79,14 @@ void BLock::turn() {
 	} else {
 		// show number
 	}
+}
+
+Block* Block::blockFactory( int type )
+{
+	CCTexture2D *texture = CCTextureCache::
+		sharedTextureCache()->addImage(IMAGE_BLOCK_TYPE1);
+	Block* block = new Block();
+	block->initWithTexture(texture , CCRectMake(0, 0, BLOCK_WIDTH, BLOCK_HEIGHT));
+	block->autorelease();
+	return block;
 }

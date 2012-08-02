@@ -75,7 +75,7 @@ void MainLayer::ccTouchCancelled(CCTouch *pTouch, CCEvent *pEvent) {
 
 void MainLayer::initScene() {
 	// init backgroud
-	CCSprite* sprite = CCSprite::spriteWithFile("bg.jpg");
+	CCSprite* sprite = CCSprite::spriteWithFile("bg2.jpg");
 	CCSize size = CCDirector::sharedDirector()->getWinSize();
 	sprite->setPosition(ccp(size.width / 2, size.height /2));
 	this->addChild(sprite, 0);
@@ -90,11 +90,11 @@ void MainLayer::initBlocksArea() {
 	// create blocks
 	CCTexture2D *texture = CCTextureCache::sharedTextureCache()->addImage("block.png");
 	// create batchnode
-	//CCSpriteBatchNode* blockBatchNode = CCSpriteBatchNode::create(texture, 50);
+	CCSpriteBatchNode* blockBatchNode = CCSpriteBatchNode::create(texture, 50);
 	//this->addChild(blockBatchNode);
 	for (int i = 0; i < BLOCKS_X_NUMBER; i++) {
 		for (int j = 0; j < BLOCKS_Y_NUMBER; j++) {
-			BLock* bl = BLock::blockWithTexture(texture);
+			Block* bl = Block::blockFactory(1);
 	        bl->setPosition(ccp(BLOCKS_AREA_X + BLOCKS_SIZE / 2 + BLOCKS_SIZE * i, BLOCKS_SIZE / 2 + BLOCKS_AREA_Y + BLOCKS_SIZE * j));
 			bl->index = i * BLOCKS_X_NUMBER + j;
 			this->addChild(bl);
